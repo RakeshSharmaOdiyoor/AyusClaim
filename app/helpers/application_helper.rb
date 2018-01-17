@@ -7,6 +7,14 @@ module ApplicationHelper
   	[["Pending", "pending"], ["Approved", "approved"], ["Paid", "paid"], ["Denied", "denied"]]
   end
 
+  def search_status_types
+    [["Status",""],["Pending", "pending"], ["Approved", "approved"], ["Paid", "paid"], ["Denied", "denied"]]
+  end
+
+  def gender_types
+    [["Male", "male"], ["Female", "female"],["Others","others"]]
+  end
+
   def divider
     "<span class='divider'> <i class='icon-hand-right'></i> </span>".html_safe
   end

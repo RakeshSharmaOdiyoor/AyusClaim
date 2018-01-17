@@ -9,6 +9,7 @@
         = search_form_for [@search], :html => { :class => 'form-search' } do |f|
           .pull-left
             = f.text_field :patient_name_cont , :placeholder => "Name search"
+            = f.select :status_eq ,search_status_types, {}, {:class => 'input-small doctor_list'}
             = f.submit "Search",  :class => 'btn btn-info', data: { disable_with: 'Searching...'}
           .clearfix
     .span2
