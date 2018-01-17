@@ -1,0 +1,30 @@
+-sl_no = 1
+.table-responsive
+  %table.table.table-bordered.table-hover
+    %thead
+      %tr.trheader
+        %th Total Claims
+        %th Total Claim Amt
+        %th Total Approved
+        %th Total Approved Amt
+        %th Total Denied
+        %th Total Denied Amt
+        %th Total Paid
+        %th Total Paid Amt
+        %th Total Pending
+        %th Total Pending Amt
+        %th Total TDS Amt
+    %tbody
+      %tr 
+        %td= @claims.count rescue 0
+        %td= @claims.sum(:claim_amount) rescue 0
+        %td= @claims.where("approved_amount > ?",0.0).count rescue 0
+        %td= @claims.sum(:approved_amount) rescue 0
+        %td= @claims.where("status = ?",'denied').count rescue 0
+        %td= @claims.where("status = ?",'denied').sum(:claim_amount) rescue 0
+        %td= @claims.where("status = ?",'paid').count rescue 0
+        %td= @claims.sum(:net_amount) rescue 0
+        %td= @claims.where("status = ?",'pending').count rescue 0
+        %td= @claims.where("status = ?",'pending').sum(:claim_amount) rescue 0
+        %td= @claims.sum(:tds_amount) rescue 0
+    

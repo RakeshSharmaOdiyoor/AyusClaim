@@ -1,0 +1,5 @@
+= simple_form_for @claim  do |f|
+	= render "/claims/fields", {:f => f }
+  
+	= f.submit "Create Claim", data: { disable_with: 'Saving...' }, :class => 'btn btn-info'
+    

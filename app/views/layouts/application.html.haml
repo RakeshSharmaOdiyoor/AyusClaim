@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "AyusClaim"
+    %meta{:content => content_for?(:description) ? yield(:description) : "AyusClaim", :name => "description"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body{:style=>"background-color: #fff"}
+    .container
+      .row 
+        .col-md-4
+        .col-md-4
+
+          = yield
+ 
+         
+

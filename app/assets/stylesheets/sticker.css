@@ -1,0 +1,12 @@
+html, body{font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; font-size: 12px; }
+#labels{margin: 0; padding: 0;}
+.sticker{ padding: 0px; margin: 0px; text-align: center;  page-break-after: always; width: 2in; height: 1in; overflow: hidden; font-weight: bold;}
+.sticker p{padding: 0px; margin: 0px; font-size: 8px; line-height: 9px;  font-weight: bold;}
+.sticker h3, .sticker h4{margin: 0px; line-height: 10px; font-size: 10px; padding-top: 3px;  font-weight: bold; }
+.sticker h3 span{display: block}
+             
+table.barby-barcode { border-spacing: 0;   margin: 0px auto 0px auto;}
+tr.barby-row {}
+td.barby-cell {   width: 0px; padding: 0px 1px 0px 0px; height: 30px; }
+td.barby-cell.on { background: #000; }
+          

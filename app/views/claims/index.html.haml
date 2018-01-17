@@ -1,0 +1,53 @@
+= content_for :breadcrumb do
+  %ul.breadcrumb
+    %li.active  
+      CLAIMS
+.row{:style=>"margin-left: 0px;"}
+  .span12
+    .span6
+      .pull-left
+        = search_form_for [@search], :html => { :class => 'form-search' } do |f|
+          .pull-left
+            = f.text_field :patient_name_cont , :placeholder => "Name search"
+            = f.submit "Search",  :class => 'btn btn-info', data: { disable_with: 'Searching...'}
+          .clearfix
+    .span2
+      .pull-right
+        .row
+          = link_to "New Claim", new_claim_path, :class => 'btn btn-success'
+          = link_to 'Import File', '#', :onclick => "$('.import-file').toggle(); return false;", :class => 'btn btn-secondary'
+    .hide.import-file
+      .span4
+        .pull-right
+          = form_tag import_claims_path, multipart: true do
+            = file_field_tag :file
+            = submit_tag "Import", :class => 'btn btn-info btn-small'
+
+    
+
+
+%table.table.table-bordered.table-hover
+  %tr
+    %th Patient Name
+    %th Scheme
+    %th Village
+    %th Claim Amount
+    %th Status
+    %th.span3
+ 
+
+  - @claims.each do |claim|
+    %tr
+      
+      %td= claim.patient_name rescue ""
+      %td= claim.scheme rescue ""
+      %td= claim.village rescue ""
+      %td= claim.claim_amount rescue ""
+      %td= claim.status rescue ""
+
+      
+      %td
+        = link_to 'Show', claim, :class => 'btn btn-mini'
+        = link_to 'Edit', edit_claim_path(claim), :class => 'btn btn-mini btn-warning'
+        = link_to 'Delete', claim, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
+

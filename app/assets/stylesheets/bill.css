@@ -1,0 +1,121 @@
+.bill {
+    background-color: #fff;
+    padding: 16px;
+}
+
+.bill-gap {
+    padding-left: 5px;
+}
+
+.bill .right {
+    float: right;
+}
+
+.bill input {
+    border-radius: 0;
+}
+
+.bill-list {
+    min-height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.bill-list-table {
+    width: 100%;
+}
+
+.bill-list-table thead {
+    border-bottom: 1px solid #bbb;
+}
+
+.bill-list-table td, .bill-list-table th {
+    padding: 4px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.bill-list-table__price {
+    text-align: right !important;
+    width: 80px;
+}
+
+/* Bill-add-item */
+.bill-add-item {
+    display: flex;
+}
+
+.bill-add-item .control-group {
+    padding-right: 5px;
+}
+
+.bill-add-item__price-label {
+    text-align: right;
+}
+
+.bill-add-item__price {
+    text-align: right;
+    min-width: 60px;
+}
+
+.bill-list-table__actions {
+    width: 80px;
+}
+
+.bill-totals {
+}
+
+.bill-totals td {
+    padding-left: 15px;
+}
+
+/* batch modal */
+.bill-batch-modal {
+    width: 600px;
+}
+
+.bill-batch-modal__body {
+    height: 400px !important;
+    background-color: #EEEEEE;
+}
+
+.bill-batch-modal__list-header {
+    clear: both;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+}
+
+.bill-batch-modal__list-header div, .bill-batch-modal__list-item div {
+    display: inline-block;
+    width: 140px;
+    padding: 8px 4px;;
+    box-sizing: border-box;
+}
+
+.bill-batch-modal__list-items {
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.bill-batch-modal__list-items ul, .bill-batch-modal__list-items li {
+    margin: 0;
+    padding: 0;
+}
+
+.bill-batch-modal__list-items li {
+    border-bottom: 1px solid #ccc;
+}
+
+.bill-batch-modal__list-items li:active, .bill-batch-modal__list-items li:focus {
+    background-color: #D9EDF7;
+    
+}
+
+.bill-money-text {
+    min-width: 80px;
+    text-align: right;
+}

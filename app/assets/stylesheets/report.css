@@ -1,0 +1,474 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap2.css
+
+ */
+
+/*body {
+   size: 7in 9.25in;
+   margin: 27mm 12mm 27mm 12mm;
+   color: #000;
+   font-size: 110%;
+}
+
+.a4{width:230mm; margin: 0 auto; border: 1px solid #aaa} 
+page[size="A4"] {
+  background: white;
+  width: 21cm;
+  height: 29.7cm;
+  
+  width: 210mm;
+  height: 297mm;
+  
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  border: 1px solid #888
+}
+
+@media print {
+  body, page[size="A4"] {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+*/
+
+
+
+body {
+  color: #000;
+  font-size: 13px;
+  line-height: 20px;
+  min-height: 100%; 
+  text-rendering: optimize-speed  !important;
+ 
+  }
+
+.header_table tbody td, .header_table tbody th {
+  border-top: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 20px;
+  font-weight: normal;
+  margin-bottom: 20px; }
+
+.header_table tbody tr th {
+ /*width: 1px;
+  white-space: nowrap;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 80%;
+  width: 1px;
+  white-space: nowrap; }
+
+.header_table tbody tr td:first-child {
+  width: 100%; }
+
+.header_table tbody tr td:last-child {
+  width: 1px;
+  white-space: nowrap; }
+
+.footer_table tbody tr td:first-child {
+  width: 1px !important;
+  white-space: nowrap; }
+
+.footer_table tbody tr td:nth-child(2) {
+  width: 100%; }
+
+.footer_table tbody tr td:last-child {
+  width: 1px !important;
+  white-space: nowrap; }
+
+.report_headers {
+  margin-bottom: 5px; }
+
+.header_table tbody tr th:last-child {
+  padding-right: 0px; }
+
+.end_of_report {
+  font-size: 11px;
+  margin-top: 15px;
+  color: #666; }
+
+span.des {
+  font-size: 10px;
+  line-height: 12px;
+  display: block; }
+
+.pdf-report tbody tr td, .pdf-report tbody tr th {
+  border-top: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px !important;
+  max-height: 20px; }
+
+.pdf-report tbody tr td h5, .pdf-report tbody tr th h5 {
+  line-height: 22px !important;
+  margin: 0px; }
+
+.pdf-report tbody td.bigpart, .pdf-report tbody th.bigpart {
+  width: 30%; }
+
+.pdf-report tbody td.smallpart, .pdf-report tbody th.smallpart {
+  width: 20%; }
+
+.pdf-report tbody td:first-child {
+  width: 40%; }
+
+.pdf-report tbody th:first-child {
+  width: 40%; }
+
+/*.header .header_table tbody tr td:nth-child(2){width: 40%}*/
+.footer_table_margin_top {
+  margin-top: 20px; }
+
+.footer_table tbody tr td {
+  text-align: center;
+  border-top: 0px;
+  padding: 0px; }
+
+.report_headers tbody tr th {
+  font-weight: bold;
+  color: #555 !important; }
+
+.footer_table {
+  margin-bottom: 0px; }
+
+.footer_table tr td .esignature {
+  min-height: 40px; }
+
+.footer_table tr td .esignature img {
+  min-width: 70px;
+  width: 80px;
+  min-height: 25px; }
+
+.pdf-report tbody th {
+  font-weight: normal; }
+
+.header .table, .bill_header .table {
+  margin-bottom: 0px; }
+
+.wrapper, .test_results {
+  position: relative;
+  min-height: 100%; }
+
+.pdf-report tbody tr td, .pdf-report tbody tr th {
+  padding: 0px 0px; }
+
+center.end_of_report {
+  font-size: 10px;
+  margin-top: 5px; }
+
+hr.end_of_report {
+  border-top: 1px solid #888;
+  border-bottom: 0px;
+  background: none;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+td.align-right {
+  text-align: right; }
+
+.justified {
+  text-align: justify; }
+
+.page_break {
+  page-break-after: always; }
+
+.top_bar img {
+  width: 100%; }
+
+.inner_wrapper {
+  border-color: #888;
+  border-style: solid;
+  border-width: 0px;
+  padding: 10px; }
+
+.page {
+  border-color: #888;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden; }
+
+.center_align {
+  text-align: center; }
+
+.pdf-report td span.italic-font {
+  font-size: 8px;
+  line-height: 2px;
+  padding-bottom: 5px;
+  display: block; }
+
+.red-color {
+  background-color: #fff;
+  color: #EA1D1D;
+}
+
+.break_page {
+  page-break-before: always; }
+
+.pdf-report {
+  margin-bottom: 8px; }
+
+/* table.no-break { page-break-inside: avoid;  }
+  .pdf-report tr td, .pdf-report tr th { page-break-inside: avoid; }*/
+.no_break {
+  page-break-inside: avoid; }
+
+/*
+.pdf-report tr td .table {
+
+  border: 1px solid #ccc;
+  width: 100%; }
+
+.pdf-report tr td .table tr td {
+  border-top: 1px solid #ccc; padding-left: 5px; padding-top: 3px }
+*/
+
+.pdf-report tr td .table {
+  border: none;
+  width: 90%; }
+
+.pdf-report tr td .table tr td {
+  border-top: none; }
+ 
+
+.html_parameter-table tbody tr td, .table_border_none tbody tr th {
+  border-left: 0px; }
+
+.antibiotic tbody tr th {
+  font-weight: bold; }
+
+.pdf-report tr td .antibiotic {
+  width: 100%; }
+
+.pdf-report tr td .widal_tube_test {
+  width: 100%; }
+
+.pdf-report tr td .widal_tube_test tr td {
+  border: 1px solid #ddd; }
+
+.pdf-report tr td .widal_tube_test tr.widal_tube_test_top_border th {
+  border: none;
+  font-weight: bold; }
+
+.pdf-report tr td .antibiotic tr td {
+  padding-left: 5px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding-right: 2px;
+  white-space: nowrap; }
+
+.pdf-report tr td .antibiotic tr td:last-child, .pdf-report tr td .antibiotic tr.header th:last-child {
+  border-right: 1px solid #ddd; }
+
+.pdf-report tr td .antibiotic tr.header th {
+  border-top: 1px solid #ddd;
+  font-size: 90%; }
+
+.pdf-report tr td .antibiotic tr.top_border td {
+  border-top: 1px solid #ddd; }
+
+.pdf-report tr td .antibiotic tr td.gap {
+  border-bottom: 0px;
+  border-top: 0px;
+  width: 5%; }
+
+.pdf-report tr td .anqtibiotic tr.top_border td.gap {
+  border-bottom: 0px;
+  border-top: 0px; }
+
+.pdf-report tr td .antibiotic tr td:first-child {
+  width: 30%; }
+
+.pdf-report tr td .antibiotic tr td:nth-child(6) {
+  width: 30%; }
+
+/*.pdf-report tr td .antibiotic tr td:nth-child(2), .pdf-report tr td .antibiotic tr td:nth-child(3), .pdf-report tr td .antibiotic tr td:nth-child(4), .pdf-report tr td .antibiotic tr td:nth-child(7), .pdf-report tr td .antibiotic tr td:nth-child(8), .pdf-report tr td .antibiotic tr td:nth-child(9), .pdf-report tr td .antibiotic tr th:nth-child(2), .pdf-report tr td .antibiotic tr th:nth-child(3), .pdf-report tr td .antibiotic tr th:nth-child(4), .pdf-report tr td .antibiotic tr th:nth-child(7), .pdf-report tr td .antibiotic tr th:nth-child(8), .pdf-report tr td .antibiotic tr th:nth-child(9) { max-width: 25px; text-align: center }*/
+.bill_title {
+  font-weight: bold;
+  font-size: 150%;
+  text-align: center;
+  margin-bottom: 5px; }
+
+.banner {
+  margin-bottom: 10px;
+  text-align: center; }
+
+td.rgt, th.rgt {
+  text-align: right; }
+
+.bill_table {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.bill_table tbody tr td, .bill_table tbody tr th {
+  border-top: 0px;
+  padding: 1px;
+  font-size: 90%; }
+
+.bill_table tbody tr.header th {
+  border-bottom: 0.5px solid #888; }
+
+.bill_table tbody tr.total td, .bill_table tbody tr.total th {
+  border-top: 0.5px solid #888;
+  border-bottom: 0.5px solid #888;
+  font-weight: bold; }
+
+.bill_header tbody tr td, .bill_header tbody tr th {
+  font-size: 85%;
+  padding: 0px;
+  line-height: 17px; }
+
+.bill_header tbody tr th {
+  font-size: 80%; }
+
+.bill_signature {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 85%; }
+
+.bill_signature span {
+  display: block; }
+
+.bordered {
+  border: 1px solid #999;
+  padding: 5px 10px;
+  border-radius: 5px; }
+
+.underlined {
+  border-bottom: 1px solid #888;
+  padding: 5px 0px; }
+
+.bill_top_bar {
+  text-align: center; }
+
+td.in_words {
+  font-weight: bold; }
+
+.received {
+  font-size: 85%;
+  display: block;
+  line-height: 16px; }
+
+.due {
+  font-size: 110%; }
+
+.a5 {
+  font-size: 90% !important; }
+
+.bill_table_combined tr td:nth-child(1) {
+  width: 150px; }
+
+.bill_table_combined tr th:nth-child(1) {
+  width: 150px; }
+
+.bill_table_combined tr td:nth-child(2) {
+  width: 500px; }
+
+.bill_table_combined tr th:nth-child(2) {
+  width: 500px; }
+
+.bill_table_combined tr td:nth-child(3) {
+  width: 80px; }
+
+.bill_table_combined tr th:nth-child(3) {
+  width: 80px; }
+
+.bill_table_combined tr td:nth-child(4) {
+  width: 130px; }
+
+.bill_table_combined tr th:nth-child(4) {
+  width: 130px; }
+
+tr, td, th, tbody, thead, tfoot {
+  page-break-inside: avoid !important; }
+
+.print_data tr td {
+  padding: 3px; }
+
+
+ 
+ .pdf-report tr td .print_table_with_border {
+   border-top: 1px solid #333333;
+ }
+
+.pdf-report tr td .print_table_with_border tr td {
+  padding-left: 5px;
+  border-left: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+ 
+  white-space: nowrap; }
+
+.pdf-report tr td .print_table_with_border tr td:last-child, .pdf-report tr td .print_table_with_border tr.header th:last-child {
+  border-right: 1px solid #333333; }
+
+.pdf-report tr td .print_table_with_border tr.header th {
+  border-top: 1px solid #333333; }
+
+.pdf-report tr td .print_table_with_border tr.top_border td {
+  border-top: 1px solid #333333; }
+
+
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont,
+               'avenir next', avenir,
+               helvetica, 'helvetica neue',
+               ubuntu,
+               roboto, noto,
+               'segoe ui', arial,
+               sans-serif;
+}
+.consolas { font-family: Consolas, monaco, monospace; }
+.courier { font-family: 'Courier Next', courier, monospace; }
+.helvetica { font-family: 'helvetica neue', helvetica, sans-serif; }
+.avenir { font-family: 'avenir next', avenir, sans-serif; }
+.athelas { font-family: 'athelas', georgia, serif; }
+.georgia { font-family: georgia, serif; }
+.dejavu { font-family: 'DejaVu Serif' }
+.padauk { font-family: 'Padauk' }
+.umpush {font-family: 'Umpush' }
+.freesans { font-family: 'FreeSans' }
+.kscstfarsi { font-family: 'KacstFarsi' }
+.ariel { font-family: 'Arial' }
+.kacstqurn { font-family: 'mry_KacstQurn' }
+.gargi { font-family: 'gargi' }
+.waree { font-family: 'Waree' }
+.loma { font-family: 'Loma' }
+.nanummyeongjo { font-family: 'NanumMyeongjo' }
+.kacstnaskh { font-family: 'KacstNaskh' }
+.kacsttitle { font-family: 'KacstTitle' }
+.impact { font-family: 'Impact' }
+.sawasdee { font-family: 'Sawasdee' }
+.pothana { font-family: 'Pothana2000' }
+.verdana { font-family: 'Verdana' }
+.times { font-family: 'Times' }
+.arabic { font-family: 'Arabic' }
+.roman { font-family: 'Times New Roman' }
+
+
+.pdf-report tr td .antibiotic tr td:last-child, .pdf-report tr td .antibiotic tr.header th:last-child {
+     border-right: 0px solid #fff; 
+}
+.pdf-report tr td .antibiotic tr td {
+    padding-left: 5px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding-right: 2px;
+    white-space: nowrap;
+}

@@ -1,0 +1,30 @@
+@media print {
+  .navbar {
+    display: none; }
+
+  .span3 {
+    display: none; }
+
+  .filters {
+    display: none; }
+
+  ul.breadcrumb {
+    display: none; }
+
+  .active {
+    display: none; }
+
+  #sidebar {
+    display: none; }
+
+  .multiselect {
+    display: none; }
+
+  .btn {
+    display: none; }
+
+  .old {
+    display: none; }
+
+  .btn-success {
+    display: none; } }

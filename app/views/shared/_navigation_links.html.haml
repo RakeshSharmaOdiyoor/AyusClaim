@@ -1,0 +1,19 @@
+- if current_user.admin?
+  %li= link_to "HOME".html_safe, dashboard_index_path, :class =>'navbar-brand text_color'
+  %li= link_to "STORES".html_safe, end_users_path, :class =>'navbar-brand'
+  %li= link_to "DEVICE".html_safe, devices_path, :class =>'navbar-brand'
+ 
+  %li= link_to "MEDIA AGENT".html_safe, media_agents_path, :class =>'navbar-brand'
+  %li= link_to "REQUESTS".html_safe, discussions_path, :class =>'navbar-brand'
+
+- elsif current_user.issue?
+  %li= link_to 'PROJECT', projects_path, class: 'navbar-brand'
+  %li= link_to "ISSUE".html_safe, issues_path, :class =>'navbar-brand'
+-else    
+  %li= link_to 'PROFILE', agent_details_path, class: 'navbar-brand'
+  %li= link_to "CAMPAIGNS".html_safe, clusters_path, :class =>'navbar-brand'
+  %li= link_to "CONTENTS".html_safe, ads_path, :class =>'navbar-brand'
+  
+
+
+

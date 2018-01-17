@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require bootstrap3
+ */
+ 
+
+
+     body {
+	background:url("/assets/site/bg.gif") top left repeat;
+	font-family: 'ProximaNova-Regular', Arial, Helvetica, sans-serif;
+      }
+     .container{max-width: 1000px;}
+     .navbar .shadow { background: url("/assets/site/header-shadow.png") no-repeat center top;
+		border-top: 1px #EEE solid;
+		clear: both;
+		 
+		
+		z-index: 998;}
+      body { margin-top: 80px; }
+
+
+       ul.nav li {
+         font: 15px/18px 'ProximaNova-Bold', Arial, Helvetica, sans-serif;
+       }
+       ul.nav li a {color: #444;}
+
+       .caption h4 {
+             font-family:  Helvetica, arial, sans-serif;
+             text-transform: uppercase;
+             font-weight: bold;
+             font-size: 16px;
+        }
+
+       .thumbnail  .caption {
+          text-align: center;
+       }
+       hr.sep {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          border: 0;
+          border-top: 1px solid #ddd;
+       }
+       @font-face {
+        font-family: "Latinia Black"; src: url('/assets/site/LatiniaBlack.ttf') format("truetype");
+        }
+
+       .logo { font-family: "Latinia Black"; font-size: 42px; font-weight: normal; margin: 12px 0 12px 0px;}
+       .logo a { color: #333;} 
+
+       .thumbnails img { height: 150px; border-radius: 10px; }
+       .page-header { padding: 10px 10px 5px; text-align: center; border-bottom: none; margin: 10px 0 10px;}
+       .page-header h2 { font-size: 28px; line-height: 1.5;  }
+       .special h2 {  font-size: 28px; margin-bottom: 25px;}
+ 
+       .special {text-align: center; margin-bottom: 40px}
+       .navbar-nav>li>a.btn { padding-top: 5px; padding-bottom: 5px; }
+       .navbar-nav>li.butn{margin-top: 8px; margin-left: 20px}
+       .navbar-nav>li.butn > a {color: #ffffff;}
+       .navbar-nav>li.butn > a:hover{
+background-color: #ed9c28;
+border-color: #d58512;}
+       .navbar-nav>li > a{font-weight: bold;}
+       .navbar-nav{margin-top: 12px; margin-bottom: 12px;}
+       .narrow-container{max-width: 920px}
+       .navbar-container{background: #fff;}
+       .navbar-toggle { background-color: #ccc;}
+       .thumbnail {
+display: inline;
+padding: 0;
+line-height: 1;
+border: 0 none;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+#footer {
+overflow: hidden;
+background: url("/assets/site/bg-dark.gif");
+margin-top: 40px; 
+line-height: 13px;
+color: #fff;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+.thumbnails .caption p {
+color: #0c3b4e;
+font-size: 14px;
+text-align: center;
+line-height: 18px;
+margin-top: 10px;
+}
+
+.quote .image{ margin-right: 10px; margin-bottom: 10px}
+.quote span{font-weight: bold}

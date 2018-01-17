@@ -1,0 +1,65 @@
+.print-pharma-bill {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.print-pharma-bill-header {
+    margin: 5px 0;
+    display: flex;
+}
+.print-pharma-bill-header__left {
+    flex: 1;
+}
+
+.print-pharma-bill-header__right {
+    width: 250px;
+    justify-content: flex-end;
+}
+
+/* patient */
+
+.print-pharma-bill-patient {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.print-pharma-bill-patient_header {
+    width: 50px;
+    white-space: nowrap;
+}
+
+.print-pharma-bill-patient_value {
+    min-width: 60px;
+    padding-right: 5px;
+}
+
+/* items */
+.print-pharma-bill-items {
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #373737;
+    margin-top: 10px;
+}
+
+.print-pharma-bill-number {
+    text-align: right;
+}
+
+.print-pharma-bill-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.print-pharma-bill-total th {
+    text-align: right;
+    padding-right: 2px;
+    font-weight: normal;
+}
+
+.print-pharma-bill-total td {
+    text-align: right;
+    padding-right: 5px;
+}

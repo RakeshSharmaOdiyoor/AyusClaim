@@ -1,0 +1,58 @@
+.bill_top_bar
+  = wicked_pdf_image_tag "sparsha_vinayak.jpg"
+
+%table.table_border_none{:style => "width:100%"}
+  %tr
+    -s = ""
+    -s +=  "<b> Name : " + "#{@claim.patient_name}</b>"
+    - unless @claim.age.blank?
+      -s += ' / ' + " #{@claim.age} "
+    - unless @claim.gender.blank?
+      - if @claim.gender == 'male'
+        -g = 'M'
+      - elsif @claim.gender == 'female'
+        -g = 'F'
+      - else
+        -g = @claim.gender
+       
+      -s += ' / ' + g
+    %td= raw s
+    %td= raw "<b>Claim /Inward No. : </b>" + " #{@claim.inward_no rescue ''}"
+    %td= raw "<b> UHID No. : </b> " +  "#{@claim.uhid_no rescue ''}"
+  %tr
+    %td= raw "<b> Admission Date: </b> " + " #{date_format(@claim.date_of_admission) rescue ""}"    
+    %td= raw "<b> Discharge Date: </b> " + " #{date_format(@claim.date_of_discharge) rescue ""}"
+   
+    -s = ""    
+    %td= raw s
+%br
+
+%hr{:style=>"margin-top:0px;padding: 10px 0px 0px 0px;margin-bottom:0px;"}
+
+%table.table_border_none{:style => "width:100%"}
+  %tr
+    %th{:align => "left"} Sl No.
+    %th Particulars
+    %th Tick
+    - count = 0
+    - @claim.checklists.each do |checklist|
+      - count += 1
+      %tr
+        %td= count
+        %td= checklist.checklist_name
+        //%td= checklist.check_collected? rescue false
+        %td= bool_to_glyph(checklist.check_collected?)
+
+
+%br
+.pull-right
+  %p Total Claimed Amount _____________
+
+%br
+.pull-left
+  %p Verified By:
+
+%br
+%br
+.pull-left
+  %p InCharge Signature:

@@ -1,0 +1,357 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap2.css
+ *= require jquery-ui-1.10.3.custom
+ *= require bootstrap-wysihtml5
+ *= require jquery-ui-timepicker-addon
+ *= require select2
+ *= require bootstrap-modal
+ *= require comman
+ *= require summernote
+ *= require morris
+ *= require font-awesome.min.css
+ *= require_self
+ *= require bootstrap-multiselect
+ */
+ 
+body { 
+  background: #ddd;
+}
+
+html,body{height:100%;}
+
+.container {
+    height:100%;
+}
+
+a#togglessidebar { position:fixed; display:block; color:black; 	}
+a.toggles { left:21.5%; top:9%; }
+a.toggles1 { left:0px; top:9%; }
+
+.no-sidebar { margin-left:0 !important; }
+
+#content { margin-left: 0px;padding: 10px 0px 0px 10px;}
+#sidebar { 
+  background: #fff;
+  padding: 10px 0px 0px 10px;
+  margin: 0px;
+  border-right: 1px solid #BDADAD;
+  border-bottom: 1px solid #BDADAD; 
+  min-height: 610px;
+  text-align: center;
+  /*-webkit-box-shadow: 4px 2px 7px rgba(50, 50, 50, 1);
+  -moz-box-shadow:    4px 2px 7px rgba(50, 50, 50, 1);
+  box-shadow:         4px 2px 7px rgba(50, 50, 50, 1);*/
+}
+
+.container-fluid-padding-left { padding-left: 0px;}
+
+.approximate_dob_link {
+  margin:28px 0px 0px 30px; 
+  font-size:12px; 
+  font-style: italic;
+}
+
+.lab_partition {
+  width:250px;
+  float: left;
+  margin:0px 0px 10px 30px;
+  border: 1px solid #F0E9E9;
+  padding: 10px; 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px; 
+}
+
+.margin-left-15 { margin-left: 10px; }
+.margin-left-17 {margin-left: 17px;}
+.margin-left-20 {margin-left: 20px;}
+.margin-left-25 {margin-left: 25px;}
+.margin-top-10 { margin-top: 10px; }
+.margin-top-20 {margin-top: 20px;}
+.margin-top-25 { margin-top: 25px;}
+.margin-left-30{margin-left:10em;} 
+.min-height-200 {min-height: 200px;}
+td.equal_width, th.equal_width {width:32%;} 
+
+h3.patient_sidebar_name { font-size: 22px; margin: 20px 0px 0px 0px;line-height: 20px;}
+.patient_sidebar_gender { font-size: 12px;margin: 0;}
+
+hr.margin-0 { margin: 0px;}
+
+td.no_border { border :none;}
+
+#sidebar > .table {
+	margin: 0px;
+}
+#sidebar .table th, .table td { 
+  padding: 4px 6px;
+}
+
+#content-div { 
+ 
+	background: #ffffff;
+	 
+	-webkit-border-radius: 5px;-moz-border-radius: 5px;
+    border-radius: 5px;min-height: 300px;-webkit-box-shadow: 1px 1px 4px 666;
+    -moz-box-shadow:    1px 1px 4px  #666;
+    box-shadow:         1px 1px 4px #666;
+}
+
+h3.popover-title { 
+  background: #336087;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.trheader td, .trheader th { background: #F5F5F5;}
+h4.category-title { margin: 0px 0px 5px 0px; border-bottom: 1px solid grey;line-height: 30px;}
+
+table#bill_items th, table#bill_items td { border: none;}
+table#bill_items { border-width: 0px;}
+
+.inline-div { display: inline;}
+
+.has_report { color: #DFA05D; }
+.has_no_report {color: #333333; }
+
+.width_250px { width: 200px; }
+input.width_250px[type="submit"] {
+	width: 250px;
+}
+
+#alert-area { margin: 0px 10px; height: 20px;}
+
+
+.border { 
+  border: 1px solid #F0E9E9;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+
+tr.already_added td, tr.already_added th { background: #BCA289; }
+
+.current  { background-color: #47749C;  }
+.current a { color: white;font-weight: bold }
+
+.margin_top_10px { margin-top: -10px;}
+
+
+
+.table.equal-width th, .table td.equal-width  {width: 200px;}
+
+
+/* Sidenav for Docs
+-------------------------------------------------- */
+ 
+.bs-docs-sidenav {
+
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.bs-docs-sidenav > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 1px solid #c2bbbb;
+}
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  background-image: url(/assets/glyphicons-halflings-white.png);
+  opacity: 1;
+}
+.bs-docs-sidenav.affix {
+  top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+li.current { background: #f5f5f5}
+li.blank-header { border: 1px solid #c2bbbb;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+  text-transform: uppercase;
+  color: #999999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  text-align: center;
+  }
+
+  li.current-link { background: #D2DADA;}
+
+
+#lab-test-prescribed-lists { border:1px solid #ddd;margin: 5px 0px 5px 0px;background:#E5EDF1;padding:5px;border-radius:2px;margin-bottom:20px;min-height: 20px;height: auto;}  
+
+.label-info { margin: 0px 5px 3px 0px;}
+ 
+.light-backgound { background:#F3F3F3;}
+.patient-or-width {width: 75px;font-weight: bold;}
+.width-300px { width: 300px}
+.width-500px { width: 500px; margin-bottom: 10px;}
+ 
+ 
+.table th.right-align, .table td.right-align {text-align: right; }
+
+.margin-left-30px { margin-left: 30px;}
+.h3-header { margin-right: 20px; font-size: 13px;}
+
+.change-select-textbox-div { display: inline;}
+
+#total{
+  width: 1100px;
+  text-align: right;
+}
+
+.save-btn{margin-top:30px;}
+
+.bill_type_red { color: red;}
+.bill_type_green { color: green;}
+.details_tbl {margin-bottom: 10px}
+.details_tbl td{padding-right: 30px}
+
+.report_part{background: #fff; padding: 20px; margin-bottom: 30px; border: 1px solid #bbb; box-shadow: 3px 3px 3px #aaa;}
+.report-head{background: #d9edf7; margin: -20px -20px 10px -20px; padding: 3px 5px; border-bottom: 1px solid #ccc; }
+
+.report-head .margin-left-30px{margin-top: 5px}
+.report-head h3{margin: 0px; padding: 0px 10px}
+
+.report_body table td table{margin: 2%; width: 96%}
+
+.combined_report{margin: -31px; background: #ddd; padding: 10px}
+.out_of_range{border: 1px solid rgb(197, 49, 49) !important; background: rgb(255, 225, 223) !important}
+.error_notice{color: rgb(197, 49, 49)}
+.timefont{color:red;}
+.settings tbody tr th{width: 120px; border-right: none}
+.settings tbody tr td{  border-left: none}
+.report_settings tbody tr td{border-top: none}
+.report_settings tbody tr td.label{width: 150px; background: none; color: #444}
+
+.settings tbody tr td.sep{width:50%}
+.checkboxlist {margin-left: 25px;}
+
+#login-div{padding: 10px 30px 30px 30px; width: 250px; margin: 30px auto 0 auto; background: #ffffff; -webkit-border-radius: 5px;-moz-border-radius: 5px;
+    border-radius: 5px;min-height: 300px;-webkit-box-shadow: 1px 1px 4px 666;
+    -moz-box-shadow:    1px 1px 4px  #666;
+    box-shadow:         1px 1px 4px #666; }
+.mail_color{color: #bbb}
+.phone_color{color: #bbb}
+.margin-left-0 { margin-left: 0px; }
+.last_sync_info {
+  font-size: 11px;
+  color: white;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .set_height {
+    height: 270px;
+  }
+}
+
+
+table tr.bt-border td {
+  border-bottom: solid 1px;
+}
+
+.pre-bill-item {
+  background: #cc4d2d;
+  margin-right: 5px;
+  font-size: 9px;
+}
+
+.pre-bill-item_for_text {
+  color: #cc4d2d;
+  margin-right: 5px;
+  font-size: 9px;
+}
+
+.pre-lab-test{
+  margin-right: 10px;
+  font-size: 9px;
+}
+
+.report_dispatch_color{
+  background-color: #660033;
+}
+
+.report_dispatch_color_text{
+  color: #660033;
+}
+
+.text_warning_color_text{
+  color: #ff9900;
+}
+
+.text_default_color_text{
+  color: #adad85;
+}
+
+.text_success_color_text{
+  color: #006600;
+}
+
+.venue_font_for_prescription{
+  font-size:9px;
+}
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}

@@ -1,0 +1,69 @@
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+.multiselect-container input[type="text"] {
+    width: 70%
+}
+.multiselect-container .input-prepend {
+    padding: 3px
+}
+.multiselect-container>li {
+    padding: 0
+}
+.multiselect-container>li>label {
+    margin: 0;
+    padding: 3px 20px 3px 20px;
+    height: 100%;
+    cursor: pointer
+}
+.multiselect-container>li>label.multiselect-header {
+    margin: 0;
+    padding: 3px 20px 3px 20px;
+    height: 100%
+}
+.multiselect-container>li>label>input[type="checkbox"] {
+    margin-bottom: 5px
+}
+
+
+.input-ref-append {
+    display: inline-block;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+
+.input-ref-append .add-on, .input-ref-append .btn {
+    margin-right: -1px;
+}
+
+.input-ref-append .add-on, .input-prepend .add-on, .input-ref-append .btn, .input-prepend .btn, .input-ref-append .btn-group > .dropdown-toggle, .input-prepend .btn-group > .dropdown-toggle {
+    border-radius: 0;
+    vertical-align: top;
+}
+
+
+.input-ref-append span {
+	background-color: #eeeeee;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 20px;
+    line-height: 20px;
+    min-width: 16px;
+    padding: 4px 5px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    width: auto;
+}
+
+ 
+.input-ref-append .add-on:first-child, .input-ref-append .btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+

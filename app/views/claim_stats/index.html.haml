@@ -1,0 +1,17 @@
+= content_for :breadcrumb do
+  %ul.breadcrumb
+    %li.active  
+      CLAIM SUMMARY
+
+#content-div
+
+  = form_tag(by_month_claim_stats_path, :remote => true, :method => :get, :class => "well form-inline") do
+    %table
+      %tr
+        %td= select_date(Date.today,{:discard_day => true, :order => [:month, :year]}, {:class => 'input-small'})
+        %td= submit_tag "Search By Month", :class => 'btn btn-success'
+  .clearfix
+
+  #by_month_data
+#loading    
+

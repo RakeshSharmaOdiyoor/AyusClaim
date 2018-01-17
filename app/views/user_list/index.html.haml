@@ -1,0 +1,17 @@
+.col-md-12
+  .panel.panel-green
+    %table.table.table-bordered.table-hover
+      %thead.panel-heading
+        %tr
+          %th{:colspan => "2"}
+          
+      %tbody
+        %tr
+          %th Email
+          
+        - @users.each do |user|
+          %tr
+            %td= user.email
+            
+    
+    %br

@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap2.css
+ *= require comman 
+ *= require jquery-ui-1.10.3.custom.css
+ *= require bootstrap-wysihtml5.css 
+ *= require bootstrap-modal.css
+ *= require summernote
+ *= require font-awesome.min.css
+ *= require_self
+ *= require bootstrap-multiselect
+
+ */
+ .margin-left-15 { margin-left: 15px; }
+ .margin-left-20 {margin-left: 20px;}
+ .margin-left-25 { margin-left: 25px;}
+ .margin-top-20  { margin-top: 20px;}
+ .margin-left-0 {margin-left:0px;}
+ .m-stats-item {
+    padding: 15px;
+    margin-top: 5px;
+    background-color: #08C;
+    color: white;
+    text-decoration: none !important;
+  }
+ .m-stats-val {
+    display: block;
+    font-size: 16pt;
+    font-weight: bold;
+  }  
+  .margin_bottom_10px{
+    margin-bottom: 10px;
+  } 
+
+

@@ -1,0 +1,13 @@
+= content_for :breadcrumb do
+	%ul.breadcrumb
+		%li.active  
+			CHECKLIST
+= simple_form_for @checklist  do |f|
+	.well.well-small
+		.table-responsive
+			%table
+				%tr
+					%td= f.input :checklist_name, :input_html => {:class => "input-xxlarge"}
+  
+	= f.submit "Create checklist", data: { disable_with: 'Saving...' }, :class => 'btn btn-info'
+    

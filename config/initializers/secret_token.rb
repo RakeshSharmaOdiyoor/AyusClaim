@@ -1,0 +1,1 @@
+AyusclaimApp::Application.config.secret_key_base = 'cf2bb907fe4269022db2bd2729f82968c7d0f3f276bf7b3c3ad4b697016257e616266b32eacd98bcf72ce0ee60e1953384fbaa91fc82bf9cbe5ac557412ba6ed'

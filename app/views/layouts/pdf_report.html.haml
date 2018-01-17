@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %title Report
+    = wicked_pdf_stylesheet_link_tag    "report"
+    = wicked_pdf_javascript_include_tag "jquery"
+    = wicked_pdf_javascript_include_tag "jquery.splitlines"
+  %body{style: "font-size: #{offline_online_font_size rescue '10'}px !important;", :class=>"#{current_venue.print_setting.font_family_name rescue ""}"}
+    = yield

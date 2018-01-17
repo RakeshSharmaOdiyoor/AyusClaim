@@ -1,0 +1,13 @@
+= simple_form_for([@claim], url: checklist_claim_claim_path(@claim), :method => :post) do |f|
+  .well.well-small
+    .table-responsive
+      %table.table-stripped
+        -Checklist.all.each do |checklist|
+          %tr
+            %td{:align => "left"}
+              = checklist.checklist_name
+            %td{:align => "right",:style=>"padding-left: 20px;"}
+              = check_box_tag 'checklist_ids[]', checklist.id, (checked = true if @claim.checklist_ids.include?(checklist.id))
+      = f.button :submit, 'Save', data: { disable_with: 'Saving...' }, :class => 'btn btn-info btn-small',:style=>"margin-top:27px;"
+        
+  

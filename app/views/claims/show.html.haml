@@ -1,0 +1,86 @@
+=content_for :breadcrumb do
+  %ul.breadcrumb   
+    %li=  "CLAIMS"
+    %li= divider
+    %li.active
+      = @claim.patient_name
+.pull-right
+  %i.icon-print= link_to "Print Template", claim_path(@claim, :format => :pdf,:visit_report_print_size => 'A4') , :target => "_blank" 
+.clearfix 
+.table-responsive
+  %table.table.table-bordered.patient_details
+    %tr
+      %th Scheme :
+      %td= @claim.scheme rescue ''
+      %th Card no :
+      %td= @claim.card_no rescue ''
+      %th Urn no :
+      %td= @claim.urn_no rescue ""
+      %th Reg no :
+      %td= @claim.reg_no rescue ""
+    
+
+.table-responsive
+  %table.table.table-bordered.patient_details
+    %tr
+      %th Patient Name :
+      %td= @claim.patient_name rescue ''
+      %th Village :
+      %td= @claim.village rescue ''
+      %th Taluk :
+      %td= @claim.taluk rescue ""
+      %th District :
+      %td= @claim.district rescue ""   
+    %tr
+      %th Age :
+      %td= @claim.age rescue ""
+      %th Gender :
+      %td= @claim.gender.capitalize rescue ""
+      %th Mobile :
+      %td= @claim.mobile rescue ""
+      %th Uhid no :
+      %td= @claim.uhid_no rescue ""
+
+.table-responsive
+  %table.table.table-bordered.patient_details
+    %tr
+      %th Admission Date :
+      %td= @claim.date_of_admission rescue ''
+      %th Surgery Date:
+      %td= @claim.date_of_surgery rescue ''
+      %th Discharge Date:
+      %td= @claim.date_of_discharge rescue ""
+      %th Surgery Name :
+      %td= @claim.reg_no rescue ""
+    %tr
+      %th Procedure Code :
+      %td{:colspan=>"7"}= @claim.procedure_code rescue ""
+
+.table-responsive
+  %table.table.table-bordered.patient_details
+    %tr
+      %th Claim Amount :
+      %td= @claim.claim_amount rescue ''
+      %th Status :
+      %td= @claim.status rescue ''
+      %th Approved Amount :
+      %td= @claim.approved_amount rescue ""
+      %th Penalty Amount :
+      %td= @claim.penalty_amount rescue ""   
+    %tr
+      %th Final Amount :
+      %td= @claim.final_amount rescue ""
+      %th Tds Amount :
+      %td= @claim.tds_amount rescue ""
+      %th Net Amount :
+      %td= @claim.net_amount rescue ""
+      %th Utr no :
+      %td= @claim.utr_no rescue ""
+.clearfix
+
+.pull-right= link_to "<i>+ Add CheckList</i>".html_safe, "#", :onclick => "$('.checklist').toggle(); return false;"
+.clearfix
+.hide.checklist
+  = render "/claims/checklist"     
+
+

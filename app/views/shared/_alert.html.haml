@@ -1,0 +1,7 @@
+.alert_div
+  - unless notice.blank?
+    .alert.alert-success 
+      = link_to 'x', '#', :class => "close", 'data-dismiss' => "alert"
+      = notice 
+  - unless alert.blank?
+    %p.alert.alert-error= alert

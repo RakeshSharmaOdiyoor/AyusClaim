@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "AdGenie Cloud"
+    %meta{:content => content_for?(:description) ? yield(:description) : "AdGenie Cloud", :name => "description"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render 'shared/navigation'
+    .wrapper.container
+      .row 
+        .col-md-12
+          = yield
+
+
+    = yield(:extra_javascript)
+    %footer.footer
+      .container
+        © 2014 - 2015 BeWo. All rights reserved.
