@@ -2,11 +2,18 @@
   .well.well-small
     .table-responsive
       %table.table-stripped
+        - sl_no = 0
+        %tr
+          %th{:align => "left",:style=>"padding-right: 20px;"} Sl No.
+          %th{:align => "left"} Particulars
+          %th{:align => "right",:style=>"padding-left: 50px;"} Tick
         -Checklist.all.each do |checklist|
+          - sl_no += 1
           %tr
+            %td{:align => "left",:style=>"padding-right: 20px;"}= sl_no
             %td{:align => "left"}
               = checklist.checklist_name
-            %td{:align => "right",:style=>"padding-left: 20px;"}
+            %td{:align => "right",:style=>"padding-left: 50px;"}
               = check_box_tag 'checklist_ids[]', checklist.id, (checked = true if @claim.checklist_ids.include?(checklist.id))
       = f.button :submit, 'Save', data: { disable_with: 'Saving...' }, :class => 'btn btn-info btn-small',:style=>"margin-top:27px;"
         
