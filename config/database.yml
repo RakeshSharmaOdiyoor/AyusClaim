@@ -13,5 +13,5 @@ production:
   database: claim_development
   pool: 5
   username: root
-  password: isiri
+  password: ayusroot!123
   socket: /var/run/mysqld/mysqld.sock
