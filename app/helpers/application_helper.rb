@@ -32,4 +32,33 @@ module ApplicationHelper
     value ? "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>".html_safe : "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>".html_safe
   end
 
+  def check_scheme(value)
+    if value == "RSBY"
+      return rsby
+    elsif value == "Yeshaswini"
+      return yeshaswini
+    elsif value == "ABY"
+      return aby
+    else
+      return false
+    end
+  end
+
+  def check_status(value)
+    if value == "Paid"
+      return 'paid'
+    elsif value == "Approved"
+      return 'approved'
+    elsif value == "Denial"
+      return 'denied'
+    elsif value == "Pending"
+      return 'pending'
+    else
+      return false
+    end
+  end
+      
+      
+
+
 end

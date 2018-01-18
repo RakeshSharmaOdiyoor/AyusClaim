@@ -18,7 +18,6 @@
       
       %td= checklist.checklist_name rescue ""
       %td
-        = link_to 'Show', checklist, :class => 'btn btn-mini'
         = link_to 'Edit', edit_checklist_path(checklist), :class => 'btn btn-mini btn-warning'
         = link_to 'Delete', checklist, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
 

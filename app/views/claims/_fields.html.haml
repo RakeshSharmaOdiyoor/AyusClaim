@@ -1,3 +1,9 @@
+=content_for :breadcrumb do
+  %ul.breadcrumb   
+    %li=  "CLAIMS"
+    %li= divider
+    %li.active
+      = "NEW CLAIM"
 .well.well-small
   .table-responsive
     %table
