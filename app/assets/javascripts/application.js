@@ -50,7 +50,7 @@ function check_selected_scheme_type(value){
     $(".relation").show();
     $(".designation").show();
     $(".kgid").show();
-    $(".plan-of-treatment").hide();
+    $(".plan-of-treatment").show();
 
   }else{
     $(".claim-card-no").show();
