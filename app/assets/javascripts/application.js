@@ -29,19 +29,36 @@ function check_selected_scheme_type(value){
   if(value == "yeshaswini"){
     $(".claim-card-no").show();
     $(".claim-urn-no").hide();
-    $(".claim-reg-no").hide();
+    $(".claim-reg-no").show();
+    $(".plan-of-treatment").show();
+    $(".relation").hide();
+    $(".designation").hide();
+    $(".kgid").hide();
+
   }else if(value == "rsby"){
     $(".claim-card-no").hide();
     $(".claim-urn-no").show();
-    $(".claim-reg-no").hide();
+    $(".claim-reg-no").show();
+    $(".plan-of-treatment").show();
+    $(".relation").hide();
+    $(".designation").hide();
+    $(".kgid").hide();
   }else if(value == "aby"){
     $(".claim-card-no").hide();
     $(".claim-urn-no").hide();
     $(".claim-reg-no").show();
+    $(".relation").show();
+    $(".designation").show();
+    $(".kgid").show();
+    $(".plan-of-treatment").hide();
+
   }else{
     $(".claim-card-no").show();
     $(".claim-urn-no").show();
     $(".claim-reg-no").show();
+    $(".relation").hide();
+    $(".designation").hide();
+    $(".kgid").hide();
   }
 }
 

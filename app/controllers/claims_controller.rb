@@ -105,6 +105,6 @@ class ClaimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def claim_params
-      params.require(:claim).permit(:patient_name,:scheme,:village,:taluk,:district,:age,:gender,:mobile_no,:hospital_name,:uhid_no,:inward_no,:ip_no,:surgery_name,:date_of_admission,:date_of_surgery,:date_of_discharge,:procedure_code,:card_no,:urn_no,:reg_no,:status,:claim_amount,:approved_amount,:penalty_amount,:final_amount,:tds_amount,:net_amount,:reason_for_rejection,:utr_no,:aadhar_no)
+      params.require(:claim).permit(:plan_of_treatment,:relationship,:designation,:kgid_no,:patient_name,:scheme,:village,:taluk,:district,:age,:gender,:mobile_no,:hospital_name,:uhid_no,:inward_no,:ip_no,:surgery_name,:date_of_admission,:date_of_surgery,:date_of_discharge,:procedure_code,:card_no,:urn_no,:reg_no,:status,:claim_amount,:approved_amount,:penalty_amount,:final_amount,:tds_amount,:net_amount,:reason_for_rejection,:utr_no,:aadhar_no)
     end
 end

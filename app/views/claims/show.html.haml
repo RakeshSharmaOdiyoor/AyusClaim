@@ -51,7 +51,7 @@
       %th Discharge Date:
       %td= @claim.date_of_discharge rescue ""
       %th Surgery Name :
-      %td= @claim.reg_no rescue ""
+      %td= @claim.plan_of_treatment rescue ""
     %tr
       %th Procedure Code :
       %td{:colspan=>"7"}= @claim.procedure_code rescue ""
@@ -76,6 +76,16 @@
       %td= @claim.net_amount rescue ""
       %th Utr no :
       %td= @claim.utr_no rescue ""
+    %tr
+      %th Relation :
+      %td= @claim.relationship rescue ""
+      %th Designation :
+      %td= @claim.designation rescue ""
+      %th KGID no :
+      %td= @claim.kgid_no rescue ""
+      %th
+      %td
+
 .clearfix
 
 .pull-right= link_to "<i>+ Add CheckList</i>".html_safe, "#", :onclick => "$('.checklist').toggle(); return false;"

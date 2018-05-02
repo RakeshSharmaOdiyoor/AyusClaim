@@ -12,6 +12,7 @@
         %td.claim-card-no= f.input :card_no, :input_html => {:class => "input-medium"}
         %td.claim-urn-no= f.input :urn_no, :input_html => {:class => "input-medium"}
         %td.claim-reg-no= f.input :reg_no, :input_html => {:class => "input-medium"}
+        %td= f.input :ip_no,:label => "IP no",:input_html => {:class => "input-medium"}
 
 .well.well-small
   .table-responsive
@@ -26,6 +27,10 @@
         %td= f.input :mobile_no, :input_html => {:class => "input-small" }
         %td= f.input :aadhar_no, :input_html => {:class => "input-small" }
         %td= f.input :uhid_no, :input_html => {:class => "input-small" }
+      %tr
+        %td.relation.hide= f.input :relationship,:input_html => {:class => "input-medium"}
+        %td.designation.hide= f.input :designation,:input_html => {:class => "input-medium"}
+        %td.kgid.hide= f.input :kgid_no,:label => "KGID no",:input_html => {:class => "input-medium"}
 
 .well.well-small
   .table-responsive
@@ -35,6 +40,7 @@
         %td= f.input :date_of_surgery, :input_html => {:class => "input-small"}
         %td= f.input :date_of_discharge, :input_html => {:class => "input-small"}
         %td= f.input :procedure_code, :input_html => {:class => "input-small" }
+        %td.plan-of-treatment= f.input :plan_of_treatment,:input_html => {:class => "input-medium "}
 
 .well.well-small
   .table-responsive
