@@ -9,7 +9,7 @@
     %table
       %tr
         %td= f.input :scheme, :collection => scheme_types, :input_html => {:class => "input-medium", onchange:"check_selected_scheme_type($(this).val())"}
-        %td.claim-card-no= f.input :card_no, :input_html => {:class => "input-medium"}
+        %td.claim-card-no= f.input :card_no,:label => "Ration card no", :input_html => {:class => "input-medium"}
         %td.claim-urn-no= f.input :urn_no, :input_html => {:class => "input-medium"}
         %td.claim-reg-no= f.input :reg_no, :input_html => {:class => "input-medium"}
         %td= f.input :ip_no,:label => "IP no",:input_html => {:class => "input-medium"}
