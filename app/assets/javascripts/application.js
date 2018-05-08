@@ -23,7 +23,7 @@
 //= require jquery.remotipart
 //= require jquery.textcomplete.min.js
 
-
+$(".search_list").select2();
 function check_selected_scheme_type(value){
   console.log(value);
   if(value == "yeshaswini"){

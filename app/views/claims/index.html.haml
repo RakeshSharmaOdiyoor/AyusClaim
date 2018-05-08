@@ -9,7 +9,11 @@
         = search_form_for [@search], :html => { :class => 'form-search' } do |f|
           .pull-left
             = f.text_field :patient_name_cont , :placeholder => "Name search"
-            = f.select :status_eq ,search_status_types, {}, {:class => 'input-small doctor_list'}
+            = f.select :status_eq ,search_status_types, {}, {:class => 'input-small search_list'}
+            = f.select :scheme_eq ,search_scheme_types, {}, {:class => 'input-medium search_list'}
+            = f.text_field :ip_no_cont , :placeholder => "IP no search",:class => 'input-medium search_list'
+            = f.text_field :uhid_no_cont , :placeholder => "Uhid no search",:class => 'input-medium search_list'
+
             = f.submit "Search",  :class => 'btn btn-info', data: { disable_with: 'Searching...'}
           .clearfix
     .span2
@@ -23,6 +27,7 @@
           = form_tag import_claims_path, multipart: true do
             = file_field_tag :file
             = submit_tag "Import", :class => 'btn btn-info btn-small'
+        .pull-right
 
     
 
@@ -51,4 +56,7 @@
         = link_to 'Show', claim, :class => 'btn btn-mini'
         = link_to 'Edit', edit_claim_path(claim), :class => 'btn btn-mini btn-warning'
         = link_to 'Delete', claim, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
+
+.center
+  = will_paginate(@claims)
 

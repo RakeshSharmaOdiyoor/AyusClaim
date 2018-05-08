@@ -5,7 +5,7 @@ class ClaimsController < ApplicationController
   # GET /claims.json
   def index
     @search = Claim.order('claims.created_at desc').search(params[:q])
-    @claims = @search.result
+    @claims = @search.result(:distinct => true).paginate(:per_page => 30, :page => params[:page])
   end
 
   # GET /claims/1

@@ -36,7 +36,10 @@ html,body{height:100%;}
 .container {
     height:100%;
 }
-
+ 
+.center{
+  text-align: center;
+}
 a#togglessidebar { position:fixed; display:block; color:black; 	}
 a.toggles { left:21.5%; top:9%; }
 a.toggles1 { left:0px; top:9%; }
