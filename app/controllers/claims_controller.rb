@@ -1,11 +1,18 @@
 class ClaimsController < ApplicationController
   before_action :set_claim, only: [:show, :edit, :update, :destroy]
+  require 'csv'
   layout 'ad'
   # GET /claims
   # GET /claims.json
   def index
     @search = Claim.order('claims.created_at desc').search(params[:q])
     @claims = @search.result(:distinct => true).paginate(:per_page => 30, :page => params[:page])
+    respond_to do |format|
+      format.html{}
+      format.csv {
+        send_data generate_csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=claims_list.csv" 
+      }
+    end
   end
 
   # GET /claims/1
@@ -99,12 +106,25 @@ class ClaimsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def generate_csv
+      csv_string = CSV.generate do |csv|
+        csv << ["Sl no.","Scheme","IP no.", "Patient name", "UHID no.", "Reg no.", "DOA", "DOS", "DOD", "Plan of treatment", "Approved Amount", "TDS","Net Amount","Hospital charges","Medicine charges","Implant charges"]
+        sl_no = 1
+        @claims.each do |claim|
+          csv <<[sl_no,"#{claim.scheme rescue ""}","#{claim.ip_no rescue ""}","#{claim.patient_name rescue ""}","#{claim.uhid_no rescue ""}","#{claim.reg_no rescue ""}","#{claim.date_of_admission}","#{claim.date_of_surgery}","#{claim.date_of_discharge}","#{claim.plan_of_treatment rescue ""}",(claim.approved_amount rescue 0.0),(claim.tds_amount rescue 0.0),(claim.net_amount rescue 0.0),(claim.hospital_charge rescue 0.0),(claim.medicine_charge rescue 0.0),(claim.implant_charge rescue 0.0)]
+          sl_no +=1
+        end
+      end
+      csv_string
+    end
+
+
     def set_claim
       @claim = Claim.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def claim_params
-      params.require(:claim).permit(:plan_of_treatment,:relationship,:designation,:kgid_no,:patient_name,:scheme,:village,:taluk,:district,:age,:gender,:mobile_no,:hospital_name,:uhid_no,:inward_no,:ip_no,:surgery_name,:date_of_admission,:date_of_surgery,:date_of_discharge,:procedure_code,:card_no,:urn_no,:reg_no,:status,:claim_amount,:approved_amount,:penalty_amount,:final_amount,:tds_amount,:net_amount,:reason_for_rejection,:utr_no,:aadhar_no)
+      params.require(:claim).permit(:hospital_charge,:medicine_charge,:implant_charge,:plan_of_treatment,:relationship,:designation,:kgid_no,:patient_name,:scheme,:village,:taluk,:district,:age,:gender,:mobile_no,:hospital_name,:uhid_no,:inward_no,:ip_no,:surgery_name,:date_of_admission,:date_of_surgery,:date_of_discharge,:procedure_code,:card_no,:urn_no,:reg_no,:status,:claim_amount,:approved_amount,:penalty_amount,:final_amount,:tds_amount,:net_amount,:reason_for_rejection,:utr_no,:aadhar_no)
     end
 end

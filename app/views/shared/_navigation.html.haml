@@ -13,10 +13,11 @@
           - if current_user
             %ul.nav
               %li= link_to "Claims" , claims_path, :class => "#{ ('disabled' if request.fullpath == claims_path) }"
-              %li= link_to "Checklist" , checklists_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
               %li= link_to "Statistics" , claim_stats_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
       .pull-right.navbar-text
         %ul.nav
+          %li= link_to "CHECKLIST" , checklists_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
           %li= link_to "LOG OUT".html_safe, destroy_user_session_path,:method => :delete,:class =>'navbar-brand'
+
       .clearfix
 %br

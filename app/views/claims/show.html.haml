@@ -77,6 +77,16 @@
       %th Utr no :
       %td= @claim.utr_no rescue ""
     %tr
+      %th Hospital charges :
+      %td= @claim.hospital_charge rescue 0.0
+      %th Medicine charges :
+      %td= @claim.medicine_charge rescue 0.0
+      %th Implant charges :
+      %td= @claim.implant_charge rescue 0.0
+      %th
+      %td
+
+    %tr
       %th Relation :
       %td= @claim.relationship rescue ""
       %th Designation :
