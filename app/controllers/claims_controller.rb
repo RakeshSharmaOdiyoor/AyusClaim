@@ -6,7 +6,7 @@ class ClaimsController < ApplicationController
   # GET /claims.json
   def index
     @search = Claim.order('claims.created_at desc').search(params[:q])
-    @claims = @search.result(:distinct => true).paginate(:per_page => 30, :page => params[:page])
+    @claims = @search.result(:distinct => true)
     respond_to do |format|
       format.html{}
       format.csv {
@@ -108,10 +108,10 @@ class ClaimsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def generate_csv
       csv_string = CSV.generate do |csv|
-        csv << ["Sl no.","Scheme","IP no.", "Patient name", "UHID no.", "Reg no.", "DOA", "DOS", "DOD", "Plan of treatment", "Approved Amount", "TDS","Net Amount","Hospital charges","Medicine charges","Implant charges"]
+        csv << ["Sl no.","Scheme","IP no.", "Patient name", "UHID no.", "Reg no.", "DOA", "DOS", "DOD", "Plan of treatment", "Approved Amount","Claim Amount", "TDS","Net Amount","Hospital charges","Medicine charges","Implant charges"]
         sl_no = 1
         @claims.each do |claim|
-          csv <<[sl_no,"#{claim.scheme rescue ""}","#{claim.ip_no rescue ""}","#{claim.patient_name rescue ""}","#{claim.uhid_no rescue ""}","#{claim.reg_no rescue ""}","#{claim.date_of_admission}","#{claim.date_of_surgery}","#{claim.date_of_discharge}","#{claim.plan_of_treatment rescue ""}",(claim.approved_amount rescue 0.0),(claim.tds_amount rescue 0.0),(claim.net_amount rescue 0.0),(claim.hospital_charge rescue 0.0),(claim.medicine_charge rescue 0.0),(claim.implant_charge rescue 0.0)]
+          csv <<[sl_no,"#{claim.scheme rescue ""}","#{claim.ip_no rescue ""}","#{claim.patient_name rescue ""}","#{claim.uhid_no rescue ""}","#{claim.reg_no rescue ""}","#{claim.date_of_admission}","#{claim.date_of_surgery}","#{claim.date_of_discharge}","#{claim.plan_of_treatment rescue ""}",(claim.approved_amount rescue 0.0),(claim.claim_amount rescue 0.0),(claim.tds_amount rescue 0.0),(claim.net_amount rescue 0.0),(claim.hospital_charge rescue 0.0),(claim.medicine_charge rescue 0.0),(claim.implant_charge rescue 0.0)]
           sl_no +=1
         end
       end
