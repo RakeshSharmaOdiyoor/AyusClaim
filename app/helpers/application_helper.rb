@@ -1,10 +1,10 @@
 module ApplicationHelper
   def scheme_types
-    [["Yeshaswini", "yeshaswini"], ["RSBY", "rsby"], ["ABY", "aby"],["RBSK","rbsk"],["VAS","vas"],["JSS","jss"],["RAB","rab"],["SER","ser"],["AKS","aks"]]
+    [["Yeshaswini", "yeshaswini"], ["RSBY", "rsby"], ["ABY", "aby"],["RBSK","rbsk"],["VAS","vas"],["JSS","jss"],["RAB","rab"],["SER","ser"],["ARS","ars"]]
   end
 
   def search_scheme_types
-    [["Select scheme",""],["Yeshaswini", "yeshaswini"], ["RSBY", "rsby"], ["ABY", "aby"],["RBSK","rbsk"],["VAS","vas"],["JSS","jss"],["RAB","rab"],["SER","ser"],["AKS","aks"]]
+    [["Select scheme",""],["Yeshaswini", "yeshaswini"], ["RSBY", "rsby"], ["ABY", "aby"],["RBSK","rbsk"],["VAS","vas"],["JSS","jss"],["RAB","rab"],["SER","ser"],["ARK","ars"]]
   end
 
   def claim_status_types
