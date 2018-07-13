@@ -16,12 +16,12 @@
 
             = f.submit "Search",  :class => 'btn btn-info', data: { disable_with: 'Searching...'}
           .clearfix
-    .span4
+    .span5
       .pull-right
         .row
           = link_to "New Claim", new_claim_path, :class => 'btn btn-success'
-          = link_to 'Import File', '#', :onclick => "$('.import-file').toggle(); return false;", :class => 'btn btn-secondary'
-          = link_to "Export CSV", "claims.csv?#{params.except('action', 'controller', 'commit', 'utf8').to_query}", :target => "_blank", :class => 'btn btn-info'
+          //= link_to 'Import File', '#', :onclick => "$('.import-file').toggle(); return false;", :class => 'btn btn-secondary'
+          //= link_to "Export CSV", "claims.csv?#{params.except('action', 'controller', 'commit', 'utf8').to_query}", :target => "_blank", :class => 'btn btn-info'
       .clearfix
        
     .hide.import-file

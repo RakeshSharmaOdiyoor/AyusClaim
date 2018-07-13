@@ -1,0 +1,94 @@
+%ul.breadcrumb
+  %li
+    = divider
+  %li.active
+    Claims Summaries
+
+#content-div
+  %ul.nav.nav-tabs#billtab
+    %li
+      %a{"data-toggle" => "tab", :href => "#by_today"} Today
+    %li
+      %a{"data-toggle" => "tab", :href => "#by_day"} Specific Day
+    %li
+      %a{"data-toggle" => "tab", :href => "#by_month"} By Month
+    %li
+      %a{"data-toggle" => "tab", :href => "#by_date_range"}  By Date Range
+
+
+
+  .tab-content{style: "overflow: visible;"}
+    #by_today.tab-pane
+      = search_form_for(@search, :url => claims_summaries_path, :method => :get, :html => {:class => "form-inline"} ) do |f|
+        %table
+          .pull-left
+            = f.text_field :patient_name_cont , :placeholder => "Name search"
+            = f.select :status_eq ,search_status_types, {}, {:class => 'input-small search_list'}
+            = f.select :scheme_eq ,search_scheme_types, {}, {:class => 'input-medium search_list'}
+            = f.text_field :ip_no_cont , :placeholder => "IP no search",:class => 'input-medium search_list'
+            = f.text_field :uhid_no_cont , :placeholder => "Uhid no search",:class => 'input-medium search_list'
+
+            = f.submit "search", :class => 'btn btn-success'
+          .pull-right
+            = link_to "Export CSV", "claims_summaries.csv?#{params.except('action', 'controller', 'commit', 'utf8').to_query}", :target => "_blank", :class => 'btn btn-info'
+          .clearfix
+      #ref_centers_by_today
+      = render 'index'
+    #by_day.tab-pane
+      = form_tag(by_day_claims_summaries_path, :remote => true, :method => :get, :class => "well form-inline") do
+        %table
+          .pull-left
+            %td= text_field_tag("date", Date.today, :class => "datepicker input-medium")
+            %td= select_tag "status_eq", options_for_select(search_status_types), {:class => 'input-medium'}
+            %td= select_tag "scheme_eq", options_for_select(search_scheme_types), {:class => 'input-medium'}
+            %td= text_field_tag("ip_no_cont", "", :placeholder => "Ip no") 
+            %td= text_field_tag("uhid_no_cont", "", :placeholder => "UHID no")   
+            %td= submit_tag "Search By Day", :class => 'btn btn-info' 
+          .clearfix
+      #ref_centers_by_date
+      #by_day_data
+
+    #by_month.tab-pane
+      = form_tag(by_month_claims_summaries_path, :remote => true, :method => :get, :class => "well form-inline") do
+        %table
+          .pull-left
+            %td= select_date(Date.today,{:discard_day => true, :order => [:month, :year]}, {:class => 'input-small'})
+            %td= select_tag "status_eq", options_for_select(search_status_types), {:class => 'input-medium'}
+            %td= select_tag "scheme_eq", options_for_select(search_scheme_types), {:class => 'input-medium'}
+            %td= text_field_tag("ip_no_cont", "", :placeholder => "Ip no") 
+            %td= text_field_tag("uhid_no_cont", "", :placeholder => "UHID no")   
+            %td= submit_tag "Search By Month", :class => 'btn btn-info' 
+          .clearfix
+      #ref_centers_by_month
+      #by_month
+
+
+    #by_date_range.tab-pane
+      = form_tag(date_range_claims_summaries_path, :remote => true, :method => :get, :class => "well form-inline") do
+        %table
+          .pull-left
+            %td= text_field_tag("from_date","", :class => "datepicker input-medium")
+            %td= text_field_tag("to_date", "", :class => "datepicker input-medium")
+            %td= select_tag "status_eq", options_for_select(search_status_types), {:class => 'input-medium'}
+            %td= select_tag "scheme_eq", options_for_select(search_scheme_types), {:class => 'input-medium'}
+            %td= text_field_tag("ip_no_cont", "", :placeholder => "Ip no") 
+            %td= text_field_tag("uhid_no_cont", "", :placeholder => "UHID no")   
+            %td= submit_tag "Search By Month", :class => 'btn btn-info' 
+          .clearfix
+      #ref_centers_date_range
+      #by_date_range
+
+
+
+
+
+#loading 
+%script
+  
+  jQuery(document).ready(function() { 
+  referred_select('#referred_select_today', '#ref_centers_by_today');
+  referred_select('#referred_select_day', '#ref_centers_by_date');
+  referred_select('#referred_select_month', '#ref_centers_by_month');
+  referred_select('#referred_select_date_range', '#ref_centers_date_range');
+  });  
+  $('#billtab a:first').tab('show'); 

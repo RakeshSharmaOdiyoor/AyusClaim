@@ -1,0 +1,23 @@
+%table.table.table-bordered.table-hover
+  %tr
+    %th Patient Name
+    %th Scheme
+    %th District
+    %th Claim Amount
+    %th Status
+    %th Hospital charges
+    %th Medicine charges
+    %th Implant charges
+ 
+
+  - @claims.each do |claim|
+    %tr
+      
+      %td= claim.patient_name rescue ""
+      %td= claim.scheme rescue ""
+      %td= claim.district rescue ""
+      %td= claim.claim_amount rescue ""
+      %td= claim.status rescue ""
+      %td= claim.hospital_charge rescue 0.0
+      %td= claim.medicine_charge rescue 0.0
+      %td= claim.implant_charge rescue 0.0

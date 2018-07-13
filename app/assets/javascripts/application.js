@@ -23,6 +23,10 @@
 //= require jquery.remotipart
 //= require jquery.textcomplete.min.js
 
+jQuery(document).ready(function() {
+  $(".datepicker").datepicker({dateFormat: 'dd-mm-yy',changeMonth: true, changeYear: true });
+});
+
 function check_selected_scheme_type(value){
   console.log(value);
   if(value == "yeshaswini"){
@@ -32,6 +36,7 @@ function check_selected_scheme_type(value){
     $(".plan-of-treatment").show();
     $(".relation").hide();
     $(".designation").hide();
+    $(".department").hide();
     $(".kgid").hide();
 
   }else if(value == "rsby"){
@@ -41,6 +46,7 @@ function check_selected_scheme_type(value){
     $(".plan-of-treatment").show();
     $(".relation").hide();
     $(".designation").hide();
+    $(".department").hide();
     $(".kgid").hide();
   }else if(value == "aby"){
     $(".claim-card-no").hide();
@@ -48,6 +54,7 @@ function check_selected_scheme_type(value){
     $(".claim-reg-no").show();
     $(".relation").show();
     $(".designation").show();
+    $(".department").show();
     $(".kgid").show();
     $(".plan-of-treatment").show();
 
@@ -57,6 +64,7 @@ function check_selected_scheme_type(value){
     $(".claim-reg-no").show();
     $(".relation").hide();
     $(".designation").hide();
+    $(".department").hide();
     $(".kgid").hide();
   }
 }

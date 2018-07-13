@@ -13,11 +13,25 @@
           - if current_user
             %ul.nav
               %li= link_to "Claims" , claims_path, :class => "#{ ('disabled' if request.fullpath == claims_path) }"
-              %li= link_to "Statistics" , claim_stats_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.fa.fa-signal.fa-white
+                  Statistics
+                  %b.caret
+                %ul.dropdown-menu
+                  %li.black= link_to "Claim Stats" , claim_stats_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
+                  %li.black= link_to "Claims Summary" , claims_summaries_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
+
       .pull-right.navbar-text
         %ul.nav
-          %li= link_to "CHECKLIST" , checklists_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
-          %li= link_to "LOG OUT".html_safe, destroy_user_session_path,:method => :delete,:class =>'navbar-brand'
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.fa.fa-wrench.fa-white
+              Settings
+              %b.caret
+            %ul.dropdown-menu
+              %li.black= link_to "Checklist" , checklists_path, :class => "#{ ('disabled' if request.fullpath == checklists_path) }"
+          %li= link_to "Log Out".html_safe, destroy_user_session_path,:method => :delete,:class =>'navbar-brand'
 
       .clearfix
 %br

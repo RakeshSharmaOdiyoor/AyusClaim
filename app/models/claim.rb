@@ -4,6 +4,10 @@ class Claim < ActiveRecord::Base
   	has_many :checklists, :through => :claim_checklists
   	#validates :utr_no, :presence => true
 
+  	def aby?
+  	  scheme == "aby"
+  	end
+
   	def self.import(file)
 	  spreadsheet = open_spreadsheet(file)
 	  header = spreadsheet.row(1)

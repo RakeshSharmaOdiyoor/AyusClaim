@@ -28,6 +28,7 @@
         %td= f.input :aadhar_no, :input_html => {:class => "input-small" }
         %td= f.input :uhid_no, :input_html => {:class => "input-small" }
       %tr
+        %td.department.hide= f.input :department,:input_html => {:class => "input-medium"}
         %td.relation.hide= f.input :relationship,:input_html => {:class => "input-medium"}
         %td.designation.hide= f.input :designation,:input_html => {:class => "input-medium"}
         %td.kgid.hide= f.input :kgid_no,:label => "KGID no",:input_html => {:class => "input-medium"}
@@ -36,9 +37,18 @@
   .table-responsive
     %table
       %tr
-        %td= f.input :date_of_admission, :input_html => {:class => "input-small"}
-        %td= f.input :date_of_surgery, :input_html => {:class => "input-small"}
-        %td= f.input :date_of_discharge, :input_html => {:class => "input-small"}
+        %td
+          %label.string.required Date of admission
+          = text_field_tag "date_of_admission","",:label => "Date of addmission", :class => 'input-large datepicker'
+        %td
+          %label.string.required Date of surgery
+          = text_field_tag ":date_of_surgery","",:label => "Date of addmission", :class => 'input-large datepicker'
+        %td
+          %label.string.required Date of discharge
+          = text_field_tag "date_of_discharge","",:label => "Date of addmission", :class => 'input-large datepicker'
+        //%td= f.input :date_of_admission, :input_html => {:class => " datepicker input-small"}
+        //%td= f.input :date_of_surgery, :input_html => {:class => " datepicker input-small"}
+        //%td= f.input :date_of_discharge, :input_html => {:class => "datepicker input-small"}
         %td= f.input :procedure_code, :input_html => {:class => "input-small" }
         %td.plan-of-treatment= f.input :plan_of_treatment,:input_html => {:class => "input-medium "}
       
