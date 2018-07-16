@@ -1,1 +1,11 @@
 = render 'edit_fields'
+
+%script
+  if($('#claim_scheme').val() == "aby"){
+  $(".claim-reg-no").show();
+  $(".relation").show();
+  $(".designation").show();
+  $(".department").show();
+  $(".kgid").show();
+  $(".plan-of-treatment").show();
+  }
