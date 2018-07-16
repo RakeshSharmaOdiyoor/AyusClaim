@@ -26,6 +26,7 @@ class ClaimsSummariesController < ApplicationController
     respond_to do |format|
       format.html { }
       format.pdf { }
+      format.js
       format.csv {
         send_data generate_csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=claims_summaries_by_day.csv" 
       }
@@ -42,6 +43,7 @@ class ClaimsSummariesController < ApplicationController
       respond_to do |format|
         format.html { }
         format.pdf { }
+        format.js
         format.csv {
           send_data generate_csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=claims_summaries_by_date_range.csv" 
         }
@@ -51,7 +53,6 @@ class ClaimsSummariesController < ApplicationController
   
   def by_month  
     @date = Date.new(params[:date][:year].to_i,params[:date][:month].to_i, params[:date][:day].to_i)
-    @date = params[:date].blank?? Date.today : params[:date].to_date
     @search = Claim.order('claims.created_at desc').search(params[:q])
     @search.created_at_gteq = @date.beginning_of_month.beginning_of_day
     @search.created_at_lteq = @date.end_of_month.end_of_day
@@ -59,6 +60,7 @@ class ClaimsSummariesController < ApplicationController
     respond_to do |format|
       format.html { }
       format.pdf { }
+      format.js
       format.csv {
         send_data generate_csv, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=claims_summaries_by_month.csv" 
       }

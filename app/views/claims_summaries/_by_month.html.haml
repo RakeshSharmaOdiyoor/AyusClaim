@@ -1,0 +1,10 @@
+.pull-left
+  %h4 
+    //= date_format(@date)
+    Claims Summaries
+
+.pull-right
+  = link_to "Export CSV", "/claims_summaries/by_month.csv?#{params.except('action', 'controller', 'commit', 'utf8').to_query}", :target => "_blank", :class => 'btn btn-info'
+.clearfix
+
+= render 'index'
