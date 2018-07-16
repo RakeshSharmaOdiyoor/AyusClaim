@@ -6,7 +6,7 @@ class ClaimsController < ApplicationController
   # GET /claims.json
   def index
     @search = Claim.order('claims.created_at desc').search(params[:q])
-    @claims = @search.result(:distinct => true)
+    @claims = @search.result(:distinct => true).paginate(:per_page => 50, :page => params[:page])
     respond_to do |format|
       format.html{}
       format.csv {

@@ -66,5 +66,7 @@
         = link_to 'Show', claim, :class => 'btn btn-mini'
         = link_to 'Edit', edit_claim_path(claim), :class => 'btn btn-mini btn-warning'
         = link_to 'Delete', claim, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
+.center
+  = pagination_links_method(@claims)
 
 

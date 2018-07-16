@@ -61,6 +61,11 @@ module ApplicationHelper
       return false
     end
   end
+
+  def pagination_links_method(collection = nil, options = {})
+    options[:renderer] = BootstrapPagination::Rails
+     will_paginate(collection, options)
+  end 
       
       
 
