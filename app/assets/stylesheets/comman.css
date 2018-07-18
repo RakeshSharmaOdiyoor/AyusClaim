@@ -2,16 +2,17 @@ html, body {
     height: 100%;
 }
 
-.navbar .navbar-inner { background:#377ba7; border-color: #235575} 
-.navbar .nav li a { color:#fff; text-shadow: none; font-weight: bold; text-align: center; border-left: 1px solid rgba(0,0,0,.1);border-right: 1px solid #61a2cc ;   text-shadow: 0 1px 1px #235575;  } 
-.navbar .nav .dropdown-menu li a{text-align: left; text-shadow: none}
+.navbar .navbar-inner { background:#4f3b5c; border-color: #235575} 
+.navbar .nav li a { color:#fff; text-shadow: none; font-weight: bold; text-align: center; border-left: 1px solid rgba(0,0,0,.1);border-right: 1px solid #4f3b5c ;   text-shadow: 0 1px 1px #4f3b5c;  } 
+.navbar .nav .dropdown-menu li a{text-align: left; text-shadow: none;}
+.navbar .nav .dropdown-menu li a:hover{background:#4f3b5c;color: white;}
 
 .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
-    background-color:#254E72;
+  background-color:#254E72;
 }
 
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
-background-color: #235575;
+background-color: #4f3b5c;
 color: #ffffff;
 }
 
@@ -47,7 +48,7 @@ line-height: 21px;
 
 .sub-title { font-style: italic; font-size: 14px;} 
 .navbar .brand {
-font-weight: bold; color: #e8f6ff; font-size: 18px;
+font-weight: bold; color: white; font-size: 18px;
 }
  
 .form-search input[type="text"]{ border: 1px solid #bbb !important; }

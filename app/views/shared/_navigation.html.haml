@@ -1,18 +1,19 @@
 .navbar.navbar-inverse.navbar-fixed-top
-  .navbar-inner
+  .navbar-inner.navbar-custom
     .container-fluid
       %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", type: "button"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar   
       - if current_user 
-        = link_to link_text("AyusClaim", ''), claims_path, :class => 'brand'
+        = link_to link_text("AyusClaim", ''), claims_path, :class => 'brand fa fa-home'
       .nav-collapse.collapse
         %ul.nav.navbar-nav
     
           - if current_user
             %ul.nav
-              %li= link_to "Claims" , claims_path, :class => "#{ ('disabled' if request.fullpath == claims_path) }"
+              //%li= link_to "Claims" , claims_path, :class => "#{ ('disabled' if request.fullpath == claims_path) }"
+              %li= link_to link_text('Claims', 'fa fa-tasks'), claims_path
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   %i.fa.fa-signal.fa-white
