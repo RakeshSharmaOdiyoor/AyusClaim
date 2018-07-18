@@ -3,7 +3,7 @@ html, body {
 }
 
 .navbar .navbar-inner { background:#4f3b5c; border-color: #235575} 
-.navbar .nav li a { color:#fff; text-shadow: none; font-weight: bold; text-align: center; border-left: 1px solid rgba(0,0,0,.1);border-right: 1px solid #4f3b5c ;   text-shadow: 0 1px 1px #4f3b5c;  } 
+.navbar .nav li a { color:#fff; text-shadow: none; font-weight: bold; text-align: center; border-left: 1px solid white;text-shadow: 0 1px 1px #4f3b5c;  } 
 .navbar .nav .dropdown-menu li a{text-align: left; text-shadow: none;}
 .navbar .nav .dropdown-menu li a:hover{background:#4f3b5c;color: white;}
 
