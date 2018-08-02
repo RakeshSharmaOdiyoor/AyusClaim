@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115043125) do
+ActiveRecord::Schema.define(version: 20180802045829) do
 
   create_table "checklists", force: true do |t|
     t.string   "checklist_name"
@@ -60,7 +60,26 @@ ActiveRecord::Schema.define(version: 20180115043125) do
     t.string   "aadhar_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "plan_of_treatment"
+    t.string   "relationship"
+    t.string   "designation"
+    t.string   "kgid_no"
+    t.decimal  "hospital_charge",      precision: 10, scale: 2, default: 0.0
+    t.decimal  "medicine_charge",      precision: 10, scale: 2, default: 0.0
+    t.decimal  "implant_charge",       precision: 10, scale: 2, default: 0.0
+    t.string   "department"
   end
+
+  create_table "profiles", force: true do |t|
+    t.integer  "user_id"
+    t.text     "address"
+    t.string   "mobile"
+    t.text     "other_information"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -76,19 +95,22 @@ ActiveRecord::Schema.define(version: 20180115043125) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
     t.string   "username"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_type"
+    t.boolean  "active",                 default: true
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

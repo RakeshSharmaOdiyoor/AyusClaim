@@ -1,0 +1,42 @@
+.modal-header
+  - if @user.new_record?
+    %h3 New Member
+  - else
+    %h3 Edit Member
+.row-fluid    
+  .span8     
+    .modal-body
+      .pull-left
+        = f.input :name
+      .pull-left.margin-left-15
+        = f.input :username
+      .clearfix
+      .pull-left
+        = f.input :password
+      .pull-left.margin-left-15
+        = f.input :password_confirmation
+      .clearfix
+      .pull-left
+        = f.input :email
+      .pull-left.margin-left-15  
+        = label_tag "User type"
+        = select_tag "user_type", options_for_select(user_types,(@user.user_type rescue "")), include_blank: false
+        //= f.input :user_type, :collection => user_types
+      .clearfix
+
+      = f.fields_for :profile do |pro| 
+        .pull-left
+          = pro.input :mobile
+        .clearfix
+        .pull-left
+          = pro.input :address
+        .pull-left.margin-left-15
+          = pro.input :other_information
+        .clearfix
+
+
+      
+      = f.submit "Save", :class => 'btn btn-primary', data: {:disable_with => 'Saving...'}
+  
+
+

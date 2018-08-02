@@ -23,11 +23,11 @@
   %tr
     %td= raw "<b> Admission Date: </b> " + " #{date_format(@claim.date_of_admission) rescue ""}"    
     %td= raw "<b> Discharge Date: </b> " + " #{date_format(@claim.date_of_discharge) rescue ""}"
-    - if @claim.aby?
+    - if @claim.aby? || @claim.jss?
       %td= raw "<b> KGID no: </b> " + " #{@claim.kgid_no rescue ""}"
 
   %tr  
-  - if @claim.aby?
+  - if @claim.aby? || @claim.jss?
     %td= raw "<b> Department: </b> " + " #{@claim.department rescue ""} "
     %td= raw "<b> Designation: </b> " + " #{@claim.designation rescue ""} "
     %td= raw "<b> Relationship: </b> " + " #{@claim.relationship rescue ""}"

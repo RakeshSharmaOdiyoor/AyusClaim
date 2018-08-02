@@ -1,4 +1,14 @@
 module ApplicationHelper
+  
+  def generate_index(index,pagination_value=100)
+    page = params[:page].blank?? 1 : params[:page].to_i
+    (index + 1)  + (pagination_value * ( page - 1 ))
+  end
+
+  def user_types
+    [["Admin","admin"],["Staff","staff"]]
+  end
+
   def scheme_types
     [["Yeshaswini", "yeshaswini"], ["RSBY", "rsby"], ["ABY", "aby"],["RBSK","rbsk"],["VAS","vas"],["JSS","jss"],["RAB","rab"],["SER","ser"],["ARK","ark"]]
   end
@@ -12,7 +22,7 @@ module ApplicationHelper
   end
 
   def search_status_types
-    [["Status",""],["Pending", "pending"], ["Approved", "approved"], ["Paid", "paid"], ["Denied", "denied"]]
+    [["Select status",""],["Pending", "pending"], ["Approved", "approved"], ["Paid", "paid"], ["Denied", "denied"]]
   end
 
   def gender_types

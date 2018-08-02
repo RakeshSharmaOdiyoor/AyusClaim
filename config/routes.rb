@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :checklists
 
+  resources :members
+
   resources :claims do
     member do
       post 'checklist_claim'

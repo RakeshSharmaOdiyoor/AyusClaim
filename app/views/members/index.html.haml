@@ -1,0 +1,38 @@
+= content_for :breadcrumb do 
+  %ul.breadcrumb
+    %li
+      SETTINGS
+      = divider     
+    %li.active
+      USERS   
+
+.pull-right
+  = link_to "ADD NEW USER" , new_member_path, :class => 'btn btn-info'
+.clearfix 
+%br
+.table-responsive
+  %table.table.table-bordered.table-hover
+    %tr
+      %th Sl no.
+      %th Name
+      %th Username
+      %th Email
+      %th Mobile
+      %th Role
+      %th Status
+      %th Actions
+
+    - @users.each_with_index do |user,index|
+
+      %tr
+        %td= generate_index(index)
+        %td= user.name
+        %td= user.username
+        %td= user.email
+        %td= user.profile.mobile rescue ""
+        %td= user.user_type rescue ""
+        %td= user.active?? "Active" : "In active"  
+               
+        %td.span4
+          = link_to "Edit"  , edit_member_path(user.id), :class => 'btn btn-mini '
+          = link_to "Delete", '#', data: { confirm: "Are you sure?" },  :class => 'btn btn-mini btn-danger'

@@ -5,7 +5,8 @@
 .pull-right
   %p
     = link_to "New Checklist", new_checklist_path, :class => 'btn btn-success'
-    = link_to 'Import File', '#', :onclick => "$('.import-file').toggle(); return false;", :class => 'btn btn-secondary'
+    - if current_user.admin_user?
+      = link_to 'Import File', '#', :onclick => "$('.import-file').toggle(); return false;", :class => 'btn btn-secondary'
 %br
 %br  
 .pull-right  

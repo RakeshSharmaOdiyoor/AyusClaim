@@ -25,6 +25,7 @@
 
 jQuery(document).ready(function() {
   $(".datepicker").datepicker({dateFormat: 'dd-mm-yy',changeMonth: true, changeYear: true });
+  $(".search_list").select2();
 });
 
 function check_selected_scheme_type(value){
@@ -48,7 +49,7 @@ function check_selected_scheme_type(value){
     $(".designation").hide();
     $(".department").hide();
     $(".kgid").hide();
-  }else if(value == "aby"){
+  }else if(value == "aby" || value == "jss"){
     $(".claim-card-no").hide();
     $(".claim-urn-no").hide();
     $(".claim-reg-no").show();
@@ -77,6 +78,7 @@ function check_status_type(value){
     $(".claim-reason-for-rejection").hide();
   }
 }
+
 
 $(function (){
   $('#cluster_schedule_from').datepicker();

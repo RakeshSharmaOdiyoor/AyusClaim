@@ -9,10 +9,10 @@
         = search_form_for [@search], :html => { :class => 'form-search' } do |f|
           .pull-left
             = f.text_field :patient_name_cont , :placeholder => "Name search"
-            = f.select :status_eq ,search_status_types, {}, {:class => 'input-small search_list'}
+            = f.select :status_eq ,search_status_types, {}, {:class => 'input-medium search_list'}
             = f.select :scheme_eq ,search_scheme_types, {}, {:class => 'input-medium search_list'}
-            = f.text_field :ip_no_cont , :placeholder => "IP no search",:class => 'input-medium search_list'
-            = f.text_field :uhid_no_cont , :placeholder => "Uhid no search",:class => 'input-medium search_list'
+            = f.text_field :ip_no_cont , :placeholder => "IP no search",:class => 'input-medium'
+            = f.text_field :uhid_no_cont , :placeholder => "Uhid no search",:class => 'input-medium'
 
             = f.submit "Search",  :class => 'btn btn-info', data: { disable_with: 'Searching...'}
           .clearfix
